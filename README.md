@@ -1,3 +1,5 @@
+![version](https://img.shields.io/badge/version-0.1.0--alpha-orange)
+
 # Seismograph
 <img src="https://raw.githubusercontent.com/HN-Vignolles/thermal-printer/master/seismograph.jpg" alt="thermal-printer printing like a seismograph" height="500"/>
 
@@ -28,7 +30,7 @@ slinktool -s BHZ.D -S C_GO01 rtserve.iris.washington.edu -p -u | ./thermal-print
 ```
 ```bash
 # Another example:
-qrencode "WIFI:S:<SSID>;T:WPA;P:<PASSWORD>;;" -o qr_wifi.png
+qrencode "WIFI:S:<SSID>;T:WPA;P:<PASSWORD>;;" -s 30 -o qr_wifi.png
 ./thermal-printer -i qr_wifi.png > /dev/serial0
 ```
 
