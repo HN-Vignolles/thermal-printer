@@ -56,7 +56,7 @@ def barcode(data):
     # A: GS k m [d]k NUL     0 <= m <= 6:   e.g. UPC-A
     # B: GS k m n [d]k       65 <= m <= 74: e.g. MODE_B+UPC-A
     sys.stdout.buffer.write(bytes([GS,ord('k'),code[data[0]]]))
-    sys.stdout.buffer.write(bytes(bytearray(data[1],'utf-8')))
+    sys.stdout.buffer.write(bytes(data[1],'utf-8'))
     sys.stdout.buffer.write(bytes([0]))
     sys.stdout.buffer.write(bytes([LF]))
 
@@ -114,7 +114,7 @@ def sine():
     # For constructing images, format '1' is 8-pixels per byte, not 1 per byte as it says in the docs
     # The image is stored in 1-pixel per byte, and range {0,255}, and (as far as I know)
     # you can't go back to actual 8-pixels per byte
-    im = Image.frombytes('1',(dotsW,interpY),bytes(bytearray(data)))
+    im = Image.frombytes('1',(dotsW,interpY),bytes(data))
     
     # (Maybe I should use matplotlib to temp file instead)
     bytesPerRow = 48
