@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# TODO: webcam "polaroid"
-# TODO: barcode + scanner oscillator (infinite trollface)
-
 import subprocess
 import signal
 from PIL import Image,ImageEnhance,ImageFilter
@@ -52,7 +49,7 @@ def barcode(data):
     sys.stdout.buffer.write(bytes([ESC,ord('@')]))  # Initialize printer
     sys.stdout.buffer.write(bytes([GS,ord('h'),80]))  # barcode height = 80
     sys.stdout.buffer.write(bytes([GS,ord('w'),3]))   # barcode width = 3
-    #sys.stdout.buffer.write(bytes([GS,ord('H'),2]))   # data below barcode
+    sys.stdout.buffer.write(bytes([GS,ord('H'),2]))   # data below barcode
     # A: GS k m [d]k NUL     0 <= m <= 6:   e.g. UPC-A
     # B: GS k m n [d]k       65 <= m <= 74: e.g. MODE_B+UPC-A
     sys.stdout.buffer.write(bytes([GS,ord('k'),code[data[0]]]))
