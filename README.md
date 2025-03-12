@@ -18,9 +18,9 @@ slinktool -s BHZ.D -S C_GO01 rtserve.iris.washington.edu -p -u | ./thermal-print
 # Barcodes
 <img src="barcode.jpg" alt="barcode example" width="300"/>
 
-```bash
-./thermal-printer.py -b 'ITF HN-VIGNOLLES ' > /dev/serial0
-```
+<!--```bash
+./thermal-printer.py -b 'ITF HN-VIGNOLLES ' > /dev/serial0  # FIXME: ITF??
+```-->
 
 # Image Printing
 <img src="print.jpg" alt="image printing example" width="400"/>
@@ -60,6 +60,8 @@ R-Pi
   - The peak current consumption can reach 3.89A
   - I have tested the LM2596 module at 9v with good results
 - Baud rate typically 9600 or 19200
+- [Code 39](https://en.wikipedia.org/wiki/Code_39) (variable length)
+- cf. [ocom_mini_printer_manual.pdf](https://mphelp.nab.questps.com.au/documents/ocom_mini_printer_manual.pdf)
 
 ## TCP/IP
 Using `socat` and `nc`.
